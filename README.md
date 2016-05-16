@@ -12,7 +12,7 @@ The most significant enhancement in version 3.x is the integration with Bootstra
 
 ## System Requirements
 
-PHP >= 5.3
+PHP >= 5.5
 
 ## Installation Instructions
 
@@ -47,19 +47,18 @@ The links provided below are meant to demonstrate the key features included in t
 
 ```php
 <?php
-require 'vendor/autoload.php';
 
-//PFBC 3.x PHP 5 >= 5.3
-session_start();
-include($_SERVER["DOCUMENT_ROOT"] . "/PFBC/Form.php");
-$form = new PFBC\Form("GettingStarted");
-$form->addElement(new PFBC\Element\Textbox("My Textbox:", "MyTextbox"));
-$form->addElement(new PFBC\Element\Select("My Select:", "MySelect", array(
+use PFBC\FormBuilder;
+
+$form = new FormBuilder("Form-ID");
+$form->textbox("My Textbox:", "MyTextbox");
+$form->select("My Select:", "MySelect",[
    "Option #1",
    "Option #2",
    "Option #3"
-)));
-$form->addElement(new PFBC\Element\Button);
+]);
+
+$form->button();
 $form->render();
 ?>
 ```

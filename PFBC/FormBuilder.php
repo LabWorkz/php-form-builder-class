@@ -6,7 +6,7 @@
  * Time: 2:47 AM
  */
 
-namespace framework\PFBC;
+namespace PFBC;
 
 
 use PFBC\Element\Button;
@@ -16,6 +16,8 @@ use PFBC\Element\Checksort;
 use PFBC\Element\CKEditor;
 use PFBC\Element\Color;
 use PFBC\Element\Country;
+use PFBC\Element\Select;
+use PFBC\Element\Textbox;
 use PFBC\Form;
 
 class FormBuilder extends Form
@@ -52,6 +54,14 @@ class FormBuilder extends Form
     public function country($label, $name, $properties=[]){
         return $this->addElement(new Country($label, $name,$properties));
     }
-    
 
+
+
+    public function textbox($label, $name, $properties = []){
+        return $this->addElement(new Textbox($label, $name,$properties));
+    }
+
+    public function select($label, $name, $properties = []){
+        return $this->addElement(new Select($label, $name, $properties));
+    }
 }
