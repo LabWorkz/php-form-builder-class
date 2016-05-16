@@ -123,9 +123,9 @@ class Form extends Base {
 
 	public function getErrors() {
 		$errors = array();
-		if(session_id() == "")
+		if(session_id() == "") {
 			$errors[""] = array("Error: The pfbc project requires an active session to function properly.  Simply add session_start() to your script before any output has been sent to the browser.");
-		else {
+		} else {
 			$errors = array();
 			$id = $this->_attributes["id"];
 			if(!empty($_SESSION["pfbc"][$id]["errors"]))
@@ -356,8 +356,11 @@ JS;
 					type: "{$this->_attributes["method"]}",
 					data: jQuery("#$id").serialize(),
 					success: function(response) {
-                                                response = JSON.parse(response);
-						if(response != undefined && typeof response == "object" && response.errors) {
+					if (typeof response != "object") {
+						response = JSON.parse(response);					
+					}
+					
+					if(response != undefined && typeof response == "object" && response.errors) {
 JS;
 
 			$this->errorView->applyAjaxErrorResponse();
