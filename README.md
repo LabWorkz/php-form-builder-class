@@ -50,7 +50,7 @@ The links provided below are meant to demonstrate the key features included in t
 
 use PFBC\FormBuilder;
 
-$form = new FormBuilder("Form-ID");
+$form = new FormBuilder("form-id");
 $form->textbox("My Textbox:", "MyTextbox");
 $form->select("My Select:", "MySelect",[
    "Option #1",
@@ -60,5 +60,5 @@ $form->select("My Select:", "MySelect",[
 
 $form->button();
 $form->render();
-?>
+
 ```
