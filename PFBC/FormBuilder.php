@@ -29,8 +29,18 @@ use PFBC\Element\Number;
 use PFBC\Element\Password;
 use PFBC\Element\Phone;
 use PFBC\Element\Radio;
+use PFBC\Element\Range;
+use PFBC\Element\Search;
 use PFBC\Element\Select;
+use PFBC\Element\Sort;
+use PFBC\Element\State;
+use PFBC\Element\Textarea;
 use PFBC\Element\Textbox;
+use PFBC\Element\Time;
+use PFBC\Element\TinyMCE;
+use PFBC\Element\Url;
+use PFBC\Element\Week;
+use PFBC\Element\YesNo;
 use PFBC\Form;
 
 class FormBuilder extends Form
@@ -140,13 +150,65 @@ class FormBuilder extends Form
         return $this->addElement(new  Radio($label, $name, $properties));
     }
 
-    public function textbox($label, $name, $properties = [])
+    public function range($label, $name, $properties = [])
     {
-        return $this->addElement(new  Textbox($label, $name, $properties));
+        return $this->addElement(new  Range($label, $name, $properties));
+    }
+
+    public function search($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Search($label, $name, $properties));
     }
 
     public function select($label, $name, $properties = [])
     {
         return $this->addElement(new  Select($label, $name, $properties));
     }
+
+    public function sort($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Sort($label, $name, $properties));
+    }
+
+    public function state($label, $name, $properties = [])
+    {
+        return $this->addElement(new  State($label, $name, $properties));
+    }
+
+    public function textarea($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Textarea($label, $name, $properties));
+    }
+
+    public function textbox($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Textbox($label, $name, $properties));
+    }
+
+    public function time($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Time($label, $name, $properties));
+    }
+
+    public function tinyMCE($label, $name, $properties = [])
+    {
+        return $this->addElement(new  TinyMCE($label, $name, $properties));
+    }
+
+    public function url($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Url($label, $name, $properties));
+    }
+
+    public function week($label, $name, $properties = [])
+    {
+        return $this->addElement(new  Week($label, $name, $properties));
+    }
+
+    public function yesNo($label, $name, $properties = [])
+    {
+        return $this->addElement(new  YesNo($label, $name, $properties));
+    }
+
+
 }
