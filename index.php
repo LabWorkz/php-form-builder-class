@@ -22,17 +22,25 @@ $version = file_get_contents("version");
             </div>
             <div class="col-md-12">
                 <div class="well">
-
-
                     <?php
                     $form = new FormBuilder("Form-ID");
+                    $form->dateTime("Date Time", 'date-time');
                     $form->textbox("My Textbox:", "MyTextbox");
                     $form->select("My Select:", "MySelect", [
                         "Option #1",
                         "Option #2",
                         "Option #3"
                     ]);
-                    $form->button();
+                    $form->tinyMCE('Tiny MCE Editor', 'text');
+                    $form->ckEditor('ckEditor', 'cktext');
+                    $form->file('File', 'file-upload');
+                    $form->week('Week Input', 'week');
+                    $form->yesNo('Yes/No', 'yes-no');
+                    $form->html("<div class='hint text-center bg-danger'><h2><em>Here is some HTML</em></h2></div>");
+                    $form->state("State", 'state');
+                    $form->country('Country', 'country');
+                    $form->captcha();
+                    $form->button('submit','submit',['class'=>'pull-right']);
                     $form->render();
                     ?>
                 </div>
