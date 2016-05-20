@@ -180,7 +180,7 @@ class FormBuilder extends Form
         return $this->addElement(new Textarea($label, $name, $properties));
     }
 
-    public function textbox($label, $name, $properties = [])
+    public function text($label, $name, $properties = [])
     {
         return $this->addElement(new Textbox($label, $name, $properties));
     }
