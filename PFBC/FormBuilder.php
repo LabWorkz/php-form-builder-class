@@ -160,9 +160,9 @@ class FormBuilder extends Form
         return $this->addElement(new Search($label, $name, $properties));
     }
 
-    public function select($label, $name, $properties = [])
+    public function select($label, $name, $options = [], $properties = [])
     {
-        return $this->addElement(new Select($label, $name, $properties));
+        return $this->addElement(new Select($label, $name, $options, $properties));
     }
 
     public function sort($label, $name, $properties = [])
